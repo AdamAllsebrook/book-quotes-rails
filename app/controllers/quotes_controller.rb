@@ -4,6 +4,7 @@ class QuotesController < ApplicationController
   # GET /quotes or /quotes.json
   def index
     @quotes = Quote.all
+    @quote = Quote.new
   end
 
   # GET /quotes/1 or /quotes/1.json
@@ -23,9 +24,13 @@ class QuotesController < ApplicationController
 
     respond_to do |format|
       if @quote.save
+        format.turbo_stream { render turbo_stream: turbo_stream.prepend('quotes', @quote) }
         format.html { redirect_to quote_url(@quote), notice: 'Quote was successfully created.' }
         format.json { render :show, status: :created, location: @quote }
       else
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.replace(@quote, partial: 'quotes/form', locals: { quote: @quote })
+        end
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @quote.errors, status: :unprocessable_entity }
       end

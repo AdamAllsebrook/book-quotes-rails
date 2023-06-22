@@ -2,13 +2,13 @@
 
 <h1>Quotes</h1>
 
-<div id="quotes">
-  <% @quotes.each do |quote| %>
+<%= render 'form', quote: @quote %>
+
+
+<%= turbo_frame_tag 'quotes' do %>
+  <% @quotes.recent.each do |quote| %>
     <%= render quote %>
-    <p>
-      <%= link_to "Show this quote", quote %>
-    </p>
   <% end %>
-</div>
+<% end %>
 
 <%= link_to "New quote", new_quote_path %>
