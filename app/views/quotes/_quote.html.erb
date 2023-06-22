@@ -1,12 +1,5 @@
-<div id="<%= dom_id quote %>">
-  <p>
-    <strong>Text:</strong>
-    <%= quote.text %>
-  </p>
-
-  <p>
-    <strong>Book:</strong>
-    <%= quote.book %>
-  </p>
-
+<div id="<%= dom_id quote %>" class="py-8 space-y-1">
+  <h2><%= quote.book %></h2>
+  <p class="text-xl"><%= quote.text %></p>
+  <p class="text-gray-600"><%= quote.created_at.strftime('%d %b, %Y') %></p>
 </div>

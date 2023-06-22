@@ -1,14 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Quotes</h1>
+<h1 class="text-2xl mx-auto py-4">Book Quotes</h1>
 
 <%= render 'form', quote: @quote %>
 
-
-<%= turbo_frame_tag 'quotes' do %>
+<%= turbo_frame_tag 'quotes', class: "p-4" do %>
   <% @quotes.recent.each do |quote| %>
     <%= render quote %>
   <% end %>
 <% end %>
-
-<%= link_to "New quote", new_quote_path %>
