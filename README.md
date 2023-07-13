@@ -1,24 +1,15 @@
-# README
+# Book Quotes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Comparing different web technologies by creating a basic twitter clone for book quotes.
 
-Things you may want to cover:
+This projects includes
+- Creating and viewing posts
 
-* Ruby version
+See also
+- [Svelte](https://github.com/AdamAllsebrook/book-quotes-svelte)
+- [Go](https://github.com/AdamAllsebrook/book-quotes-go)
+- [Django](https://github.com/AdamAllsebrook/book-quotes-django)
 
-* System dependencies
+# book-quotes-rails
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Rails 7 with hotwire and tailwind
